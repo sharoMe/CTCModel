@@ -4,7 +4,7 @@ import numpy as np
 
 import os
 from keras import Input
-from keras.engine import Model
+from keras.engine.training import Model
 from keras.layers import Lambda
 from keras.models import model_from_json, Sequential
 from tensorflow.python.framework import sparse_tensor
@@ -18,7 +18,7 @@ from tensorflow.python.util import nest
 import pickle
 from tensorflow.python.ops import ctc_ops as ctc, sparse_ops, array_ops
 
-from keras.utils import Sequence, GeneratorEnqueuer, OrderedEnqueuer
+from tensorflow.keras.utils import Sequence, GeneratorEnqueuer, OrderedEnqueuer
 import warnings
 from keras.utils.generic_utils import Progbar
 from keras.layers import TimeDistributed, Activation, Dense
