@@ -12,7 +12,6 @@ from tensorflow.python.keras import callbacks as callbacks_module
 
 from tensorflow.python.eager import context
 from tensorflow.python.keras.engine import data_adapter
-from tensorflow.python.keras.utils import tf_utils
 from tensorflow.python.ops.ragged import ragged_concat_ops, ragged_tensor
 from tensorflow.python.util import nest
 import pickle
@@ -784,7 +783,7 @@ class CTCModel:
                     callbacks.on_predict_batch_end(end_step, {'outputs': batch_outputs})
             callbacks.on_predict_end()
         all_outputs = nest.map_structure_up_to(batch_outputs, concat, outputs)
-        return tf_utils.to_numpy_or_python_type(all_outputs)
+        return all_outputs.numpy()
 
     def _predict_loop(self, f, ins, max_len=100, max_value=999, batch_size=32, verbose=0, steps=None):
         """Abstract method to loop over some data in batches.
