@@ -26,6 +26,8 @@ from keras.layers import TimeDistributed, Activation, Dense
 # from ocr_ctc.utils.utils_keras import Kreshape_To1D
 from keras.preprocessing import sequence
 
+__all__ = ['CTCModel']
+
 """
 authors: Yann Soullard, Cyprien Ruffino (2017)
 LITIS lab, university of Rouen (France)
